@@ -1,0 +1,80 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "FastAPI backend for Typeform"
+author = "Jeroen Huisman <jphuisman92@gmail.com>"
+requires-python = ">=3.11"
+dependencies = [
+    "alembic>=1.16.2",
+    "debugpy>=1.8.14",
+    "fastapi>=0.115.14",
+    "pydantic[email]>=2.11.7",
+    "sqlalchemy>=2.0.0",
+    "psycopg2-binary>=2.9.0",
+    "uvicorn>=0.35.0",
+    "asyncpg>=0.30.0",
+    "greenlet>=3.0.0",
+    "langchain>=0.3.26",
+    "httpx>=0.28.1",
+    "loguru>=0.7.3",
+    "google-api-python-client>=2.176.0",
+    "google-auth>=2.40.3",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.2",
+    "pydantic-settings>=2.10.1",
+    "cryptography>=45.0.5",
+    "fastapi-auth0>=0.5.0",
+    "langgraph>=0.6.2",
+    "argon2-cffi>=25.1.0",
+    "nanoid>=2.0.0",
+    "weaviate>=0.1.2",
+    "aiolimiter>=1.2.1",
+    "openai>=1.98.0",
+    "tiktoken>=0.9.0",
+    "aiofiles>=24.1.0",
+    "pandas>=2.3.1",
+    "bs4>=0.0.2",
+    "html2text>=2025.4.15",
+    "pdfminer>=20191125",
+    "pypdf2>=3.0.1",
+    "python-pptx>=1.0.2",
+    "docx>=0.2.4",
+    "mammoth>=1.10.0",
+    "mistralai>=1.9.3",
+    "chardet>=5.2.0",
+    "qdrant-client>=1.15.1",
+    "chonkie>=1.1.2",
+    "anthropic>=0.62.0",
+    "redis>=6.4.0",
+    "croniter>=6.0.0",
+    "firecrawl>=3.1.0",
+]
+
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+ignore = [
+  "G004",    # Logging f string
+  "PLR0913", # Too many arguments in function def
+  "PLR0911", # Too many return statements
+  "RET504", # Unnecessary assignment before return
+  "PLW060", # Unnecessary global statement
+  "RUF001", # Ambiguous plus sign
+]
+extend-select = [
+  "UP",   # pyupgrade
+  "FAST", # FastAPI
+  "G",    # Logging format
+  "RET",  # Return
+  "I",    # isort
+  "F",    # Pyflake
+  "PL",   # Pylint
+  "FURB", # refurb
+  "RUF",  # Ruff
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PLR2004"]
+"scripts/*" = ["PLR2004"]
